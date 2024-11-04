@@ -7,13 +7,16 @@ function avg(numbers) {
 }
 
 function prime(num) {
-    // TODO
-    return false;
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
 }
 
 function factorial(num) {
-    // TODO
-    return -1;
+    if (num < 0 || num > 15) return null;
+    return num === 0 ? 1 : num * factorial(num - 1);
 }
 
 module.exports = {

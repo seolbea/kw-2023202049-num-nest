@@ -14,8 +14,60 @@ test("Insufficient params", () => {
     });
 });
 
+test("Insufficient params", () => {
+    const main = spawn("node", ["main.js", "prime"]);
+    const outputs = [];
+    main.stdout.on("data", (chunk) => {
+    outputs.push(chunk);
+    });
+
+    main.stdout.on("end", () => {
+    const output = outputs.join("").trim();
+    expect(output).toBe("Insufficient parameter!");
+    });
+});
+
+test("Insufficient params", () => {
+    const main = spawn("node", ["main.js", "factorial"]);
+    const outputs = [];
+    main.stdout.on("data", (chunk) => {
+    outputs.push(chunk);
+    });
+
+    main.stdout.on("end", () => {
+    const output = outputs.join("").trim();
+    expect(output).toBe("Insufficient parameter!");
+    });
+});
+
 test("Wrong command", () => {
     const main = spawn("node", ["main.js", "sum", "1", "2", "3"]);
+    const outputs = [];
+    main.stdout.on("data", (chunk) => {
+    outputs.push(chunk);
+    });
+
+    main.stdout.on("end", () => {
+    const output = outputs.join("").trim();
+    expect(output).toBe("Wrong command!");
+    });
+});
+
+test("Wrong command", () => {
+    const main = spawn("node", ["main.js", "combination", "3"]);
+    const outputs = [];
+    main.stdout.on("data", (chunk) => {
+    outputs.push(chunk);
+    });
+
+    main.stdout.on("end", () => {
+    const output = outputs.join("").trim();
+    expect(output).toBe("Wrong command!");
+    });
+});
+
+test("Wrong command", () => {
+    const main = spawn("node", ["main.js", "multiply", "6"]);
     const outputs = [];
     main.stdout.on("data", (chunk) => {
     outputs.push(chunk);

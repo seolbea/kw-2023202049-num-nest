@@ -24,8 +24,10 @@ switch (command) {
         result = lib.avg(numbers);
         break;
     case "prime":
+        result = lib.prime(numbers[0]);
         break;
     case "factorial":
+        result = lib.factorial(numbers[0]);
         break;
     default:
         console.log("Wrong command!");
